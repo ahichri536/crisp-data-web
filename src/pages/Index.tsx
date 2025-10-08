@@ -144,7 +144,7 @@ const Index = () => {
               <div className="w-3 h-3 rounded-full bg-[hsl(var(--status-b2r))]" />
               <div>
                 <div className="text-sm font-medium text-foreground">B2R</div>
-                <div className="text-xs text-muted-foreground">Backup to restore</div>
+                <div className="text-xs text-muted-foreground">Build To Run</div>
               </div>
             </div>
           </div>
