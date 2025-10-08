@@ -34,6 +34,11 @@ const Index = () => {
     },
   ];
 
+  // Calculate dynamic stats
+  const totalClusters = clusters.length;
+  const totalClients = clusters.reduce((sum, cluster) => sum + cluster.clients.length, 0);
+  const totalHosts = clusters.reduce((sum, cluster) => sum + cluster.esxiHosts.length, 0);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -68,7 +73,7 @@ const Index = () => {
                 <Database className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <div className="text-3xl font-bold text-foreground">3</div>
+                <div className="text-3xl font-bold text-foreground">{totalClusters}</div>
                 <div className="text-sm text-muted-foreground">Active Clusters</div>
               </div>
             </div>
@@ -80,7 +85,7 @@ const Index = () => {
                 <Shield className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <div className="text-3xl font-bold text-foreground">8</div>
+                <div className="text-3xl font-bold text-foreground">{totalClients}</div>
                 <div className="text-sm text-muted-foreground">Client Services</div>
               </div>
             </div>
@@ -92,7 +97,7 @@ const Index = () => {
                 <Cloud className="w-6 h-6 text-[hsl(var(--status-prod))]" />
               </div>
               <div>
-                <div className="text-3xl font-bold text-foreground">9</div>
+                <div className="text-3xl font-bold text-foreground">{totalHosts}</div>
                 <div className="text-sm text-muted-foreground">ESXI Hosts</div>
               </div>
             </div>
